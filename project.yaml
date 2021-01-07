@@ -12,15 +12,9 @@ actions:
         cohort: output/input.csv
 
   run_model:
-    run: stata-mp:latest analysis/model.do
-    needs: [generate_study_population]
-    outputs:
-      moderately_sensitive:
-        log: logs/model.log
-
-  run_py_model:
     run: python:latest analysis/pymodel.py
     needs: [ generate_study_population ]
     outputs:
       moderately_sensitive:
-        log: logs/pymodel.log
+        log: logs/pymodel_log.txt
+        figure1: output/plots/corr_heatmap.png
