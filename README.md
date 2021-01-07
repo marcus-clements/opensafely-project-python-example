@@ -2,17 +2,13 @@
 
 This is a template repository for making new OpenSAFELY resarch projects.
 
-# _title goes here_
+## _Python Project Example_ ##
 
-This is the code and configuration for our paper, _name goes here_
+This repo is based on [https://github.com/opensafely/research-template](the opensafely research project template) but uses a python analytics model instead of R
 
-* The paper is [here]()
-* Raw model outputs, including charts, crosstabs, etc, are in `released_outputs/`
-* If you are interested in how we defined our variables, take a look at the [study definition](analysis/study_definition.py); this is written in `python`, but non-programmers should be able to understand what is going on there
-* If you are interested in how we defined our code lists, look in the [codelists folder](./codelists/).
 * Developers and epidemiologists interested in the framework should review [the OpenSAFELY documentation](https://docs.opensafely.org)
 
-# About the OpenSAFELY framework
+## About the OpenSAFELY framework ##
 
 The OpenSAFELY framework is a secure analytics platform for
 electronic health records research in the NHS.
@@ -22,3 +18,15 @@ transporting them elsewhere for analysis, the framework supports
 developing analytics against dummy data, and then running against the
 real data *within the same infrastructure that the data is stored*.
 Read more at [OpenSAFELY.org](https://opensafely.org).
+
+## Getting Started ##
+
+To use this example follow the [https://docs.opensafely.org/en/latest/install-intro/](OpenSAFELY installation instructions)
+
+The available jobs and output are configured in `project.yaml`
+
+You'll need Docker and to install the OpenSAFELY CLI - then you can execute:
+
+```opensafely run run_model```
+
+The Docker container will spin up and execute `analysis/pymodel.py` to output a log file in the `logs` directory and a Seaborn correlation heatmap in `output/plots` 
